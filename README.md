@@ -10,6 +10,8 @@ csad2627KI402VykhorKarynaRuslanivna5
 
 Репозиторій містить налаштування AI-агента для VS Code Copilot, який створює каркас кросплатформного Java-проєкту з Maven, JUnit-тестом і CI на GitHub Actions для Windows, Linux та macOS.
 
+Згенерований Maven-проєкт компілюється з `maven.compiler.release=25`. Для локальної збірки, тестів і CI потрібні JDK 25 та Maven.
+
 ## Запуск агента
 
 1. Відкрийте папку репозиторію у VS Code.
