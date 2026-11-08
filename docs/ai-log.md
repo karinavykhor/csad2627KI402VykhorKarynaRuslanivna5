@@ -112,3 +112,4 @@
     5. Як оркестратор init обробляє помилки.
     6. Таблиця відповідності файлів ролям: agent -> .github/agents/, skills -> .github/skills/, commands -> .github/prompts/. Для Maven вкажи, що тести лежать у src/test/java замість tests/.
     7. Примітка, що використано формат VS Code Copilot (custom agents, prompt files, agent skills).
+14. Створи docs/usage.md: точні команди запуску агента (VS Code, Copilot Chat, агент build-engineer, /init, /check), локальної збірки і перевірки (./ci.sh на Linux/macOS, ci.bat на Windows), запуску hello (java -jar dist/hello.jar), запуску тестів (mvn -B -ntp test).
