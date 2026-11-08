@@ -12,7 +12,7 @@ agent: build-engineer
 ## Передумови
 
 - Працюй із кореня Git-репозиторію та підтверди його командою `git rev-parse --show-toplevel`.
-- Переконайся, що доступні `java`, `mvn` і засіб перевірки YAML (`actionlint` або Python із PyYAML).
+- Переконайся, що доступні JDK 25 (`java -version`), `mvn` і засіб перевірки YAML (`actionlint` або Python із PyYAML).
 - Якщо перевірка залежить від відсутнього інструмента, познач її `FAIL` із поясненням; не встановлюй інструменти й не змінюй конфігурацію.
 
 ## Дії
@@ -20,7 +20,7 @@ agent: build-engineer
 Виконай усі дев’ять перевірок нижче. Для кожної наведи окремий результат `PASS` або `FAIL` та короткий доказ. Не пропускай перевірки через помилки попередніх кроків: познач залежні перевірки `FAIL` із причиною, а решту виконай, якщо це безпечно.
 
 1. **Файли агента та skills:** переконайся, що існують `.github/agents/build-engineer.agent.md`, `.github/skills/project-scaffold/SKILL.md`, `.github/skills/build-and-test/SKILL.md` і `.github/skills/github-actions/SKILL.md`.
-2. **Розділи skills:** у кожному з трьох `SKILL.md` перевір наявність розділів `Вхід`, `Вихід` і `Перевірки`. Познач `FAIL`, якщо хоча б один розділ відсутній у будь-якому skill.
+2. **Розділи skills:** у кожному з трьох `SKILL.md` перевір наявність розділів `Вхід`, `Вихід` і `Перевірки` у точному форматі заголовків. Познач `FAIL`, якщо хоча б один розділ відсутній у будь-якому skill.
 3. **Файли проєкту:** переконайся, що існують `src/main/java/com/example/hello/Main.java`, `src/main/java/com/example/hello/Calculator.java`, `src/test/java/com/example/hello/BasicTest.java`, `pom.xml`, `ci.sh` і `ci.bat`.
 4. **Збірка:** виконай `mvn -B -ntp verify`. Познач `PASS` лише якщо команда завершується з кодом 0.
 5. **JUnit-тест:** перевір вивід Maven на `Tests run: 1, Failures: 0, Errors: 0` і переконайся за звітом Surefire, що тест `basicAddition` пройшов. Якщо звіт або метод відсутній чи тест не пройшов, познач `FAIL`.

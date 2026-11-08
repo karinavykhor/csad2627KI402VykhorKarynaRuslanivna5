@@ -1,13 +1,21 @@
 ---
 name: github-actions
-description: Застосовуй для створення та перевірки GitHub Actions workflow для кросплатформної збірки Java 17.
+description: Застосовуй для створення та перевірки GitHub Actions workflow для кросплатформної збірки Java 25.
 ---
 
 # GitHub Actions
 
 Створи CI workflow для наявного Java/Maven проєкту. Не створюй і не змінюй код застосунку, Maven-конфігурацію чи CI-скрипти в межах цього skill.
 
-## Очікуваний результат
+## Вхід
+
+Вхідні умови для цього skill:
+
+- у корені репозиторію мають існувати `ci.sh` і `ci.bat`;
+- проєкт уже налаштований як Java/Maven-проект;
+- workflow ще не створений або його вміст треба перевірити на відповідність вимогам.
+
+## Вихід
 
 Створи `.github/workflows/ci.yml` з такими вимогами:
 
@@ -15,7 +23,7 @@ description: Застосовуй для створення та перевір�
 - Одна job із matrix `os: [ubuntu-latest, windows-latest, macos-latest]`.
 - Для matrix встанови `fail-fast: false`.
 - Додай крок отримання коду (`actions/checkout`).
-- Додай `actions/setup-java@v4` із `distribution: temurin` і `java-version: "17"`.
+- Додай `actions/setup-java@v4` із `distribution: temurin` і `java-version: "25"`.
 - На Windows запускай `ci.bat` із `shell: cmd`.
 - На Linux і macOS запускай `./ci.sh` із `shell: bash`.
 - Додай завантаження артефакту через `actions/upload-artifact@v4` з такими параметрами:
