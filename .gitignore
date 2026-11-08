@@ -1,0 +1,11 @@
+﻿target/
+build/
+dist/
+out/
+.vs/
+.idea/
+*.iml
+*.class
+.env
+*.pem
+*.key
